@@ -1,0 +1,19 @@
+{
+  "name": "dss-backend",
+  "version": "1.0.0",
+  "description": "services connection",
+  "main": "index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "start:dev": "nodemon src/index.js"
+  },
+  "author": "benjamin",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.19.2",
+    "mysql": "^2.18.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.0"
+  }
+}

@@ -15,9 +15,9 @@ exports.getUsers = (req, res) => {
   };
   
   exports.createUser = async (req, res) => {
-    let { name, email, pass } = req.body;
-    pass = await hash(pass);
-    db.query('INSERT INTO users (name, email, pass) VALUES (?,?,?)', [name, email, pass], (err, results) => {
+    let { name, email, password, emailRecovery } = req.body;
+    password = await hash(password);
+    db.query('INSERT INTO users (name, email, pass, email_recovery) VALUES (?,?,?,?)', [name, email, password, emailRecovery], (err, results) => {
       if (err) {
         return res.status(400).json({
             message: "Error al generar un nuevo usuario",

@@ -13,10 +13,14 @@ app.use(express.urlencoded({extended: true}));
 
 const userRouter = require("./routers/user");
 const authRouter = require("./routers/auth");
+const passwordRecoveryRouter = require("./routers/password-recovery");
+const updatePasswordRouter = require("./routers/update-password");
 
 //RUTAS
 app.use(userRouter);
 app.use(authRouter);
+app.use(passwordRecoveryRouter);
+app.use(updatePasswordRouter);
 
 app.listen(process.env.PORT, () => {
     console.log(">>> ESCUCHANDO PUERTO EN EL 8080 <<<")

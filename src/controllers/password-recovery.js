@@ -5,7 +5,7 @@ exports.sendEmail = (req, res) => {
     const { emailRecovery } = req.body;
 
     try {
-        db.query('SELECT * FROM users WHERE email_recovery = ?', [emailRecovery], (err, results) => {
+        db.query('SELECT * FROM users WHERE email_recovery = ? ', [emailRecovery], (err, results) => {
             if (err) {
                 return res.status(500).json({
                     message: "Error al acceder a la base de datos",
@@ -22,7 +22,7 @@ exports.sendEmail = (req, res) => {
                 });
             } else {
                 // Envía el correo
-                const url = `http://localhost:5174/update-password?email=${encodeURIComponent(emailRecovery)}`;
+                const url = `http://localhost:5173/update-password?email=${encodeURIComponent(emailRecovery)}`;
                 const mailOptions = {
                     from: 'sonicelherizo2002@gmail.com',
                     to: emailRecovery,

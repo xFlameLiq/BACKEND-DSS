@@ -5,7 +5,10 @@ exports.updatePassword = async (req, res) => {
    const { email, newPass } = req.body;
 
       if (!email || !newPass) {
-        return res.status(400).json({ message: 'El correo ha expirado.' });
+        return res.status(400).json({ 
+            message: 'El correo ha expirado.' ,
+            code: "ERR_EMAIL_EXPIRED",
+    });
     }
    try {
     const newHashedPassword = await hash(newPass);

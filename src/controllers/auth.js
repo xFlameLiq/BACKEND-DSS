@@ -36,7 +36,7 @@ exports.auth = async (req, res) => {
             }
 
             return res.status(200).json({
-                message: "Autenticación exitosa",
+                message: "Autenticación exitosa mensaje del backend",
                 user: {
                     id: user.id,
                     name: user.name,

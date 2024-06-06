@@ -40,6 +40,7 @@ exports.auth = async (req, res) => {
                 user: {
                     id: user.id,
                     name: user.name,
+                    paternalSurname: user.paternal,
                     email: user.email,
                     rol: user.rol,
                 },

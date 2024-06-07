@@ -12,12 +12,14 @@ app.use(express.json());
 app.use(express.urlencoded({extended: true}));
 
 const userRouter = require("./routers/user");
+const productRouter = require("./routers/product");
 const authRouter = require("./routers/auth");
 const passwordRecoveryRouter = require("./routers/password-recovery");
 const updatePasswordRouter = require("./routers/update-password");
 
 //RUTAS
 app.use(userRouter);
+app.use(productRouter);
 app.use(authRouter);
 app.use(passwordRecoveryRouter);
 app.use(updatePasswordRouter);
